@@ -1,37 +1,70 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import Header from "../components/Header";
+import BlogCard from "../components/BlogCard";
 
 const API_TOKEN = process.env.REACT_APP_TOKEN;
 const API_URL = process.env.REACT_APP_API_URL;
 
-/// `${API_URL}/categories`
-const retrieveBlogs = () => {
-  fetch(`${API_URL}/categories`, {
-    method: "GET", // or 'PUT'
-    headers: {
-      "Content-Type": "application/json",
-      token: `${API_TOKEN}`,
-    },
-  })
-    .then((response) => response.json())
-    .then((response) => {
-      console.log("Success:", response);
-    })
-    .catch((error) => {
-      console.error("Error:", error);
-    });
-};
-
 const BlogScreen = () => {
-  console.log(API_TOKEN);
-  console.log(API_URL);
+  const [blogs, setBlogs] = useState([]);
+  const [categories, setCategories] = useState([]);
+
+  const retrieveBlogs = () => {
+    fetch(`${API_URL}/posts?page=1`, {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+        token: `${API_TOKEN}`,
+      },
+    })
+      .then((response) => response.json())
+      .then((response) => {
+        setBlogs(response);
+        console.log(response);
+      })
+      .catch((error) => {
+        console.error("Error:", error);
+      });
+  };
+
+  const retrieveCategories = () => {
+    fetch(`${API_URL}/categories`, {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+        token: `${API_TOKEN}`,
+      },
+    })
+      .then((response) => response.json())
+      .then((response) => {
+        console.log("Success:", response);
+        setCategories(response);
+      })
+      .catch((error) => {
+        console.error("Error:", error);
+      });
+  };
   useEffect(() => {
+    retrieveCategories();
     retrieveBlogs();
   }, []);
   return (
     <div>
       <Header></Header>
-      Blog
+      <div className="container">
+        <div></div>
+        <div className="blog-container">
+          {blogs.map((blog) => (
+            <BlogCard
+              key={blog.id}
+              title={blog.title}
+              content={blog.content}
+              img={blog.img_url}
+              createdDate={blog.created_at}
+            ></BlogCard>
+          ))}
+        </div>
+      </div>
     </div>
   );
 };
