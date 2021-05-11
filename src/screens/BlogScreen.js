@@ -23,7 +23,7 @@ const BlogScreen = () => {
       .then((response) => response.json())
       .then((response) => {
         setBlogs(response);
-        console.log(response)
+        console.log(response);
         setLoading(false);
       })
       .catch((error) => {
@@ -83,25 +83,3 @@ const BlogScreen = () => {
 };
 
 export default BlogScreen;
-
-/*http://178.62.198.162/api/categories
-const retrieveBlogs = () => {
-
-    pj11daaQRz7zUIH56B9Z
-  fetch("https://example.com/profile", {
-    method: "get", // or 'PUT'
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify(data),
-  })
-    .then((response) => response.json())
-    .then((data) => {
-      console.log("Success:", data);
-    })
-    .catch((error) => {
-      console.error("Error:", error);
-    });
-};
-
-*/
