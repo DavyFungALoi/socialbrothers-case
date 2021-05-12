@@ -9,6 +9,8 @@ $assetPath: "/assets";
     url(#{$assetPath}/sb-header-photo.jpg);
   background-position: 35% 18%;
   background-repeat: no-repeat;
+  padding-top: 250px;
+  padding-bottom: 250px;
 }
 
 .header-container {
@@ -17,7 +19,6 @@ $assetPath: "/assets";
   justify-content: center;
   margin: 0 auto;
   width: 50%;
-  padding-top: 500px;
   img {
     width: 65px;
     height: 65px;
