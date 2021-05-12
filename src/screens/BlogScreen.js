@@ -62,11 +62,11 @@ const BlogScreen = () => {
       <div>
         <Header></Header>
 
-        <div className="container">
+        <div className="blog-container">
           <div>
             <CreateBlog></CreateBlog>
           </div>
-          <div className="blog-container">
+          <div className="blog-card-container">
             {blogs.map((blog) => (
               <BlogCard
                 key={blog.id}

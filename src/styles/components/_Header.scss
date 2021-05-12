@@ -1,0 +1,25 @@
+.header-wrapper {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.527), rgba(0, 0, 0, 0.5));
+}
+
+.header-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  width: 50%;
+  padding-top: 500px;
+  padding-bottom: 0xp;
+
+  img {
+    width: 65px;
+    height: 65px;
+  }
+  h1 {
+    color: white;
+    margin-left: 0.625rem;
+    span {
+      color: orange;
+    }
+  }
+}
