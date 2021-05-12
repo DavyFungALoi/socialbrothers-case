@@ -4,16 +4,7 @@ import headerimage from "../assets/sb-header-photo.jpg";
 
 const Header = () => {
   return (
-    <div
-      className="header-wrapper"
-      style={{
-        backgroundImage: `url(${headerimage})`,
-        backgroundPosition: "center",
-        backgroundSize: "cover",
-        backgroundRepeat: "no-repeat",
-        backgroundColor: "black",
-      }}
-    >
+    <div className="header-wrapper">
       <div className="header-container">
         <img src={logo}></img>
         <h1>
