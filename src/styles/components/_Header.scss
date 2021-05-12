@@ -9,10 +9,9 @@ $assetPath: "/assets";
     url(#{$assetPath}/sb-header-photo.jpg);
   background-position: 35% 18%;
   background-repeat: no-repeat;
-  padding-top: 250px;
-  padding-bottom: 250px;
+  padding-top: 200px;
+  padding-bottom: 200px;
 }
-
 .header-container {
   display: flex;
   align-items: center;
@@ -24,6 +23,7 @@ $assetPath: "/assets";
     height: 65px;
   }
   h1 {
+    font-size: 3rem;
     color: white;
     margin-left: 0.625rem;
     span {
