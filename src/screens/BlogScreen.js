@@ -73,7 +73,7 @@ const BlogScreen = () => {
                 title={blog.title}
                 content={blog.content}
                 img={blog.img_url}
-                createdDate={blog.created_at}
+                createDate={blog.created_at}
                 category={blog.category}
                 loading={loading}
               ></BlogCard>

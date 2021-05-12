@@ -2,15 +2,25 @@ import React from "react";
 
 const BlogCard = (props) => {
   const { title, content, category, img, createDate } = props;
-  console.log(createDate);
+
+  const splitDate = createDate.split(" ")[0];
+  const dayMonth = splitDate.slice(6);
+  const year = splitDate.substring(0, 4);
+  const finishedDate = `${dayMonth}-${year}`;
+  console.log(finishedDate);
 
   return (
-    <div className="blog-card-container">
-      <div className="blogcard-header-container">
-        {category ? <div>{category.name}</div> : <div></div>}
+    <div className="blog-card">
+      <div className="blog-card__header">
+        <div>{finishedDate}</div>
+        {category ? (
+          <div className="blog-card__category">{category.name}</div>
+        ) : (
+          <div></div>
+        )}
       </div>
-      <h1>{title}</h1>
-      <div>{content}</div>
+      <h1 className="blog-card__title">{title}</h1>
+      <div className="blog-card__content">{content}</div>
     </div>
   );
 };
