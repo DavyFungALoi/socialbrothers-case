@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Header from "../components/Header";
 import BlogCard from "../components/BlogCard";
+import CreateBlog from "../components/CreateBlog";
 
 const API_TOKEN = process.env.REACT_APP_TOKEN;
 const API_URL = process.env.REACT_APP_API_URL;
@@ -62,7 +63,9 @@ const BlogScreen = () => {
         <Header></Header>
 
         <div className="container">
-          <div></div>
+          <div>
+            <CreateBlog></CreateBlog>
+          </div>
           <div className="blog-container">
             {blogs.map((blog) => (
               <BlogCard

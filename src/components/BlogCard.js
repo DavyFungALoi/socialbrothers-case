@@ -2,6 +2,7 @@ import React from "react";
 
 const BlogCard = (props) => {
   const { title, content, category, img, createDate } = props;
+  console.log(createDate);
 
   return (
     <div className="blog-card-container">
